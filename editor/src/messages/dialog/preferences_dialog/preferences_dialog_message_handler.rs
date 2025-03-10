@@ -62,8 +62,8 @@ impl PreferencesDialogMessageHandler {
 			TextLabel::new("Zoom Rate").table_align(true).tooltip(zoom_rate_tooltip).widget_holder(),
 			NumberInput::new(Some(preferences.zoom_wheel_rate))
 				.tooltip(zoom_rate_tooltip)
-				.min(0.001)
-				.max(0.1)
+				.min(Some(0.001))
+				.max(Some(0.1))
 				.logarithmic(true)
 				.on_update(|number_input: &NumberInput| {
 					if let Some(value) = number_input.value {
